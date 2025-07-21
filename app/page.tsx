@@ -77,7 +77,7 @@ export default function GitHubWidgetHero() {
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
           <Button size="lg" className="bg-white text-black hover:bg-gray-200 px-8 py-4 text-lg font-medium" asChild>
-            <Link href="https://github.com/Fahad-Dezloper/GitWidget/releases/download/v1.0.1/GitWidget-Setup-1.0.1.exe">
+            <Link href="https://github.com/Fahad-Dezloper/GitWidget/releases/download/v1.0.3/GitWidget-Setup-1.0.3.exe">
               <Download className="mr-2 h-5 w-5" />
               Install Widget
             </Link>
