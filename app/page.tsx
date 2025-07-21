@@ -60,7 +60,7 @@ export default function GitHubWidgetHero() {
                 <RefreshCw className="h-5 w-5 text-green-400" />
                 <span className="font-medium">Auto Updates</span>
               </div>
-              <p className="text-sm text-gray-400 ml-8">Syncs automatically with your GitHub activity</p>
+              <p className="text-sm text-gray-400 ml-8">Syncs automatically with your GitHub activity. Whenever the GitWidget application updates, your app will update automatically too.</p>
               <div className="flex items-center space-x-3">
                 <Palette className="h-5 w-5 text-blue-400" />
                 <span className="font-medium">Clean Interface</span>
