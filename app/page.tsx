@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Github, Twitter, Download, RefreshCw, Palette, Zap } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 const GRID_COLS = 15;
@@ -72,8 +71,11 @@ export default function GitHubWidgetHero() {
           return (
             <motion.div
               key={i}
-              className="rounded-sm"
-              style={{ width: "100%", height: "100%" }}
+              style={{ 
+                width: "100%", 
+                height: "100%",
+                borderRadius: "2px"
+              }}
               animate={{
                 backgroundColor: intensity > 0 ? color : "transparent",
                 scale: intensity > 0.7 ? 1.1 : 1,
@@ -90,7 +92,13 @@ export default function GitHubWidgetHero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center space-y-2 lg:space-y-3"
+          style={{ 
+            display: "flex", 
+            flexDirection: "column", 
+            alignItems: "center", 
+            textAlign: "center", 
+            gap: "8px" 
+          }}
         >
           <div className="flex items-center justify-center space-x-2 text-xs lg:text-sm text-gray-400 font-mono">
             <Github className="h-3 w-3 lg:h-4 lg:w-4" />
@@ -113,7 +121,19 @@ export default function GitHubWidgetHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             whileHover={{ scale: 1.03 }}
-            className="bg-[#161b22] rounded-xl p-3 lg:p-4 border border-gray-700 flex flex-col items-center w-full max-w-xs lg:max-w-sm shadow-lg relative"
+            style={{ 
+              backgroundColor: "#161b22", 
+              borderRadius: "12px", 
+              padding: "12px", 
+              border: "1px solid #374151", 
+              display: "flex", 
+              flexDirection: "column", 
+              alignItems: "center", 
+              width: "100%", 
+              maxWidth: "384px", 
+              boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)", 
+              position: "relative" 
+            }}
           >
             <div className="absolute top-2 lg:top-3 left-2 lg:left-3 flex space-x-1 lg:space-x-2">
               <span className="w-2 h-2 lg:w-3 lg:h-3 bg-red-500 rounded-full"></span>
@@ -127,8 +147,15 @@ export default function GitHubWidgetHero() {
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-              className="rounded-xl overflow-hidden w-full bg-black border-2 border-gray-700 shadow-lg"
-              style={{ borderColor: '#23272f', maxWidth: '265px' }}
+              style={{ 
+                borderRadius: "12px", 
+                overflow: "hidden", 
+                width: "100%", 
+                backgroundColor: "black", 
+                border: "2px solid #23272f", 
+                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)", 
+                maxWidth: "265px" 
+              }}
             >
               <div className="p-3">
                 <div 
@@ -167,7 +194,6 @@ export default function GitHubWidgetHero() {
                     return (
                       <motion.div
                         key={i}
-                        className="rounded-sm"
                         style={{ 
                           width: '12px', 
                           height: '12px', 
@@ -193,41 +219,41 @@ export default function GitHubWidgetHero() {
                 <div className="flex justify-between items-center">
                   <div className="flex gap-1.5 items-center">
                     <motion.div 
-                      className="bg-blue-500"
                       style={{ 
                         width: '32px', 
                         height: '12px', 
-                        borderRadius: '6px' 
+                        borderRadius: '6px',
+                        backgroundColor: '#3b82f6'
                       }}
                       animate={{ opacity: [1, 0.8, 1] }}
                       transition={{ repeat: Infinity, duration: 3, delay: 0 }}
                     />
                     <motion.div 
-                      className="bg-purple-500"
                       style={{ 
                         width: '28px', 
                         height: '12px', 
-                        borderRadius: '6px' 
+                        borderRadius: '6px',
+                        backgroundColor: '#a855f7'
                       }}
                       animate={{ opacity: [1, 0.8, 1] }}
                       transition={{ repeat: Infinity, duration: 3, delay: 0.7 }}
                     />
                     <motion.div 
-                      className="bg-yellow-400"
                       style={{ 
                         width: '24px', 
                         height: '12px', 
-                        borderRadius: '6px' 
+                        borderRadius: '6px',
+                        backgroundColor: '#facc15'
                       }}
                       animate={{ opacity: [1, 0.8, 1] }}
                       transition={{ repeat: Infinity, duration: 3, delay: 1.4 }}
                     />
                     <motion.div 
-                      className="bg-orange-500"
                       style={{ 
                         width: '20px', 
                         height: '12px', 
-                        borderRadius: '6px' 
+                        borderRadius: '6px',
+                        backgroundColor: '#f97316'
                       }}
                       animate={{ opacity: [1, 0.8, 1] }}
                       transition={{ repeat: Infinity, duration: 3, delay: 2.1 }}
@@ -235,7 +261,10 @@ export default function GitHubWidgetHero() {
                   </div>
                   
                   <motion.div 
-                    className="text-white ml-2"
+                    style={{ 
+                      color: "white", 
+                      marginLeft: "8px" 
+                    }}
                     whileHover={{ scale: 1.1 }}
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -253,11 +282,19 @@ export default function GitHubWidgetHero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="space-y-3 lg:space-y-4 w-full max-w-md font-mono text-xs lg:text-sm"
+            style={{ 
+              display: "flex", 
+              flexDirection: "column", 
+              gap: "12px", 
+              width: "100%", 
+              maxWidth: "448px", 
+              fontFamily: "monospace", 
+              fontSize: "14px" 
+            }}
           >
             <div className="text-xs lg:text-sm text-gray-400 flex items-center space-x-2">
               <Zap className="h-3 w-3 lg:h-4 lg:w-4 text-green-500" />
-              <span>Why You'll Love It</span>
+              <span>Why You&apos;ll Love It</span>
             </div>
             <div className="space-y-2 lg:space-y-3">
               <div className="flex items-start space-x-3">
@@ -275,7 +312,7 @@ export default function GitHubWidgetHero() {
                 <div>
                   <span className="font-medium text-gray-100 block">GitHub Style</span>
                   <p className="text-gray-400 text-xs lg:text-sm">
-                    Matches GitHub's native dark theme.
+                    Matches GitHub&apos;s native dark theme.
                   </p>
                 </div>
               </div>
@@ -297,40 +334,43 @@ export default function GitHubWidgetHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-3 lg:gap-4 items-center justify-center w-full"
+          style={{ 
+            display: "flex", 
+            flexDirection: "column", 
+            gap: "12px", 
+            alignItems: "center", 
+            justifyContent: "center", 
+            width: "100%" 
+          }}
         >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="relative group">
-            <div className="absolute -inset-1 lg:-inset-2 bg-green-500 opacity-20 blur-xl rounded-full group-hover:animate-pulse"></div>
-            <Button
-              size="sm"
-              className="bg-green-600 hover:bg-green-500 text-white rounded-full px-4 lg:px-6 py-2 lg:py-3 text-sm lg:text-base font-mono font-medium transition-all duration-300 relative"
-            >
-              <Download className="mr-2 h-3 w-3 lg:h-4 lg:w-4" />
-              Install Widget
-            </Button>
-          </motion.div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px", alignItems: "center", width: "100%" }}>
+            <Link href="https://github.com/Fahad-Dezloper/GitWidget/releases/download/v1.0.4/GitWidget-Setup-1.0.4.exe">
+              <Button
+                className="bg-green-600 text-white px-4 py-2 rounded"
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Install Widget
+              </Button>
+            </Link>
 
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <Link href="https://github.com/Fahad-Dezloper/GitWidget">
             <Button
-              variant="outline"
-              size="sm"
-              className="border-gray-700 text-gray-400 hover:border-green-500 hover:text-green-500 rounded-full px-4 lg:px-5 py-2 lg:py-3 font-mono transition-all duration-300 text-sm lg:text-base"
+              className="border border-gray-700 text-gray-300 px-4 py-2 rounded bg-transparent"
             >
-              <Github className="mr-2 h-3 w-3 lg:h-4 lg:w-4" />
+              <Github className="mr-2 h-4 w-4" />
               Star on GitHub
             </Button>
-          </motion.div>
+            </Link>
 
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link href="https://x.com/dezloperr">
             <Button
-              variant="outline"
-              size="sm"
-              className="border-gray-700 text-gray-400 hover:border-blue-400 hover:text-blue-400 rounded-full px-4 lg:px-5 py-2 lg:py-3 font-mono transition-all duration-300 text-sm lg:text-base"
+              className="border border-gray-700 text-gray-300 px-4 py-2 rounded bg-transparent"
             >
-              <Twitter className="mr-2 h-3 w-3 lg:h-4 lg:w-4" />
+              <Twitter className="mr-2 h-4 w-4" />
               Twitter
             </Button>
-          </motion.div>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

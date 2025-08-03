@@ -15,7 +15,6 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-// SEO-optimized metadata for GitWidget
 export const metadata: Metadata = {
   title: "GitWidget | Track Your GitHub Contributions on Desktop",
   description:
